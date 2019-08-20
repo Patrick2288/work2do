@@ -1,0 +1,39 @@
+<div class='card'>
+    <h3 class='card-header bg-primary text-white'>
+    {{pageTitle}}
+    </h3>
+    <div class='card-body'>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Filter by:" aria-label="Filter by:" aria-describedby="basic-addon1" [(ngModel)]='listFilter'>
+          </div>
+          <h5 class="card-text">Filtered by: {{listFilter}}</h5>
+        <div class='table-responsive'>
+            <table class='table' *ngIf='assignments && assignments.length'>
+                <thead>
+                    <tr>
+                        <!-- <th>
+                            <button class='btn btn-primary'>
+                                Show Image
+                            </button>
+                        </th> -->
+                        <th>Assignment</th>
+                        <th>Subject</th>
+                        <th>Due Date</th>
+                        <th>Priority</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 <tr *ngFor='let assignment of filteredAssignments'>
+                     <!-- <td></td> -->
+                     <td>{{assignment.assignmentTitle}}</td>
+                     <td>{{assignment.subject}}</td>
+                    <td>{{assignment.dueDate}}</td>
+                    <td>{{assignment.priority}}</td>
+                    <td>{{assignment.status}}</td>
+                 </tr>  
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
