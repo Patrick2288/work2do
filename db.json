@@ -1,0 +1,20 @@
+{
+    "assignments": [
+      {
+        "assignmentId": 1,
+        "assignmentTitle": "Web App",
+        "subject": "Web Programming",
+        "dueDate": "August 25, 2019",
+        "priority": "High",
+        "status": "In Progress"
+    },
+    {
+        "assignmentId": 2,
+        "assignmentTitle": "Logo Design",
+        "subject": "Creative Design",
+        "dueDate": "September 18, 2019",
+        "priority": "Low",
+        "status": "Not Started"
+    }
+]
+}

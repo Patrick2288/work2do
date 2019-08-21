@@ -21,6 +21,7 @@
                         <th>Due Date</th>
                         <th>Priority</th>
                         <th>Status</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,6 +32,8 @@
                     <td>{{assignment.dueDate}}</td>
                     <td>{{assignment.priority}}</td>
                     <td>{{assignment.status}}</td>
+                    <td><button id="remove" class="btn btn1" (click) = "deleteAssignment(assignment.id)">
+                        <i class="fa fa-trash"></i>Finished</button></td>
                  </tr>  
                 </tbody>
             </table>

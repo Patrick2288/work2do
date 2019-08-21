@@ -11,6 +11,7 @@ export class WorkListComponent {
   
   pageTitle: string = "Work 2 Do";
   _listFilter: string;
+  errorMessage: string;
 
   get listFilter(): string {
       return this._listFilter;
@@ -28,13 +29,19 @@ export class WorkListComponent {
   }
 
   public ngOnInit(): void{
-      this.assignments = this._assignmentService.getAssignments();
-      this.filteredAssignments = this.assignments;
-  }
+    this._assignmentService.getAssignments().subscribe(assignments => {
+        this.assignments = assignments,                
+    this.filteredAssignments = this.assignments;
+    },
+    error => this.errorMessage = <any>error);
+} 
 
   performFilter(filterBy: string): IAssignment[]{
   filterBy = filterBy.toLocaleLowerCase();
   return this.assignments.filter((product: IAssignment) =>
   product.priority.toLocaleLowerCase().indexOf(filterBy) !== -1);
+}
+deleteAssignment(id:string): void {
+  this._assignmentService.deleteAssignment(id);
 }
 }
