@@ -1,0 +1,27 @@
+#low{
+    color: blue !important;
+}
+#medium{
+    color: yellow !important;
+}
+#high{
+    color: red !important;
+}
+.card-body{
+  background-image: url(../images/paper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 100px;
+  padding-top: 65px;
+}
+button{
+    margin: auto;
+    width: 100%;
+    border: 2px solid white;
+    font-family: graffiti;
+    font-size: 24px;
+}
+label{
+    padding-right: 5px;
+    padding-left: 5px;
+}

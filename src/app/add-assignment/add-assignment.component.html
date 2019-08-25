@@ -3,30 +3,47 @@
     <h5 class="card-title">Enter Assignment details:</h5>
     <form>
       <div class="form-group">
+          <mat-label>Assignment ID</mat-label>
         <input type="text" class="form-control" id="assignmentID" name="assignmentID" placeholder="Enter Assignment ID"
           [(ngModel)]='assignmentId'>
       </div>
       <div class="form-group">
+        <mat-label>Assignment Title</mat-label>
         <input type="text" class="form-control" id="assignmentTitle" name="assignmentTitle" placeholder="Enter Assignment Name"
           [(ngModel)]='assignmentTitle'>
       </div>
       <div class="form-group">
+        <mat-label>Subject</mat-label>
         <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject"
           [(ngModel)]='subject'>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="dueDate" name="dueDate" placeholder="Enter Due Date"
+        <mat-label>Date Assignment Is Due</mat-label>
+        <input type="date" class="form-control" id="dueDate" name="dueDate" placeholder="Enter Due Date"
           [(ngModel)]='dueDate'>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="priority" name="priority" placeholder="Priority" 
-        [(ngModel)]='price'>
+        <mat-label>Assignment Priority: </mat-label>
+        <!-- <input type="text" class="form-control" id="priority" name="priority" placeholder="High/Medium/Low" 
+        [(ngModel)]='priority'> -->
+        <label for="low">Low</label>
+        <input type="radio" id="low" value="Low" name="priority" [(ngModel)]="priority" required>
+        <label for="medium">Medium</label> 
+        <input type="radio" id="medium" value="Medium" name="priority" [(ngModel)]="priority" required>
+        <label for="high">High</label> 
+        <input type="radio" id="high" value="High" name="priority" [(ngModel)]="priority" required> 
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" id="status" name="status" placeholder="Status" 
+        <mat-label>Assignment Status: </mat-label>
+        <!-- <input type="text" class="form-control" id="status" name="status" placeholder="Status" 
         [(ngModel)]='status'>
-      </div>
-      <button type="submit" (click)="addAssignment()" class="btn btn-primary">Submit</button>
+        </div> -->
+        <label for="not started">Not Started</label> 
+        <input type="radio" value="Not Started" id="not started" name="status" [(ngModel)]="status" required>
+        <label for="in progress">In Progress</label> 
+        <input type="radio" value="In Progress" id="in progress" name="status" [(ngModel)]="status" required> 
+        </div>
+      <button type="submit" (click)="addAssignment()" class="btn btn-primary">Add</button>
     </form>
   </div>
 </div>

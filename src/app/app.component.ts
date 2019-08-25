@@ -8,5 +8,5 @@ import { AssignmentService } from './shared/assignment.service';
   providers: [AssignmentService]
 })
 export class AppComponent {
-  title = 'work2do';
+  title = 'Work 2 Do';
 }

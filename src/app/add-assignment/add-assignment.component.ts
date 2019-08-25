@@ -15,9 +15,10 @@ export class AddAssignmentComponent implements OnInit {
     dueDate: string;
     priority: string;
     status: string;
+    title = 'Work 2 Do';
 
   listFilter: string;
-  constructor(private _assignmentService: AssignmentService) { }
+  constructor(private _assignmentService: AssignmentService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -33,6 +34,6 @@ export class AddAssignmentComponent implements OnInit {
     };
     this._assignmentService.addAssignment(assignment);
 
-    //this.router.navigate(['/work-list']);
+    this.router.navigate(['/work-list']);
   }
 }

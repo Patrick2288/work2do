@@ -12,6 +12,7 @@ export class WorkListComponent {
   pageTitle: string = "Work 2 Do";
   _listFilter: string;
   errorMessage: string;
+  username: string;
 
   get listFilter(): string {
       return this._listFilter;
@@ -38,9 +39,10 @@ export class WorkListComponent {
 
   performFilter(filterBy: string): IAssignment[]{
   filterBy = filterBy.toLocaleLowerCase();
-  return this.assignments.filter((product: IAssignment) =>
-  product.priority.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  return this.assignments.filter((assignment: IAssignment) =>
+  assignment.dueDate.toLocaleLowerCase().indexOf(filterBy) !== -1);
 }
+
 deleteAssignment(id:string): void {
   this._assignmentService.deleteAssignment(id);
 }

@@ -1,12 +1,12 @@
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div class='card'>
     <h3 class='card-header bg-primary text-white'>
-    {{pageTitle}}
+    {{pageTitle}} Welcome back {{username}}Patrick!
     </h3>
     <div class='card-body'>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Filter by:" aria-label="Filter by:" aria-describedby="basic-addon1" [(ngModel)]='listFilter'>
+            <input type="text" class="form-control" placeholder="Check By Date:" aria-label="Check By Date:" aria-describedby="basic-addon1" [(ngModel)]='listFilter'>
           </div>
-          <h5 class="card-text">Filtered by: {{listFilter}}</h5>
         <div class='table-responsive'>
             <table class='table' *ngIf='assignments && assignments.length'>
                 <thead>
@@ -21,7 +21,8 @@
                         <th>Due Date</th>
                         <th>Priority</th>
                         <th>Status</th>
-                        <th>Delete</th>
+                        <th>Update Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -32,8 +33,13 @@
                     <td>{{assignment.dueDate}}</td>
                     <td>{{assignment.priority}}</td>
                     <td>{{assignment.status}}</td>
-                    <td><button id="remove" class="btn btn1" (click) = "deleteAssignment(assignment.id)">
-                        <i class="fa fa-trash"></i>Finished</button></td>
+                    <td><select>
+                            <option value="Not Started" name="status">Not Started</option>
+                            <option value="In Progress" name="status">In Progress</option>
+                          </select></td>
+                    <td><button id="edit" class="btn btn1">Edit</button></td>
+                    <td><button id="remove" class="btn btn2" (click) = "deleteAssignment(assignment.id)">
+                        <i class="fa fa-check"></i>Finished!</button></td>                    
                  </tr>  
                 </tbody>
             </table>

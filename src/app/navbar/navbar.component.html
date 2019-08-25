@@ -1,1 +1,10 @@
-<p>navbar works!</p>
+<mat-toolbar color="primary">
+  <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/home">Work 2 Do</a>
+  <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()"  routerLink="/home">Home</button>
+  <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()" routerLink="add-assignment">Add Assignment</button>
+
+  <span style="flex:1 1 auto"></span>
+  <button mat-button routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="/login">Login</button>
+  <button mat-button routerLinkActive="active" *ngIf="isLoggedIn" (click)=onLogout()>Logout</button>
+  <button mat-button routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="/signup">Register</button>  
+</mat-toolbar>

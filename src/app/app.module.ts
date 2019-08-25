@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { RouterModule, Routes} from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -21,6 +23,8 @@ import { AddAssignmentComponent } from './add-assignment/add-assignment.componen
 
 import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
+
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule, MatListModule, MatProgressSpinnerModule, MatMenuModule} from '@angular/material';
 
 library.add(faStar);
 
@@ -41,7 +45,8 @@ const routes: Routes = [
     LoginComponent,
     NavbarComponent,
     NotificationsComponent,
-    SignupComponent
+    SignupComponent,
+    AddAssignmentComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,19 @@ const routes: Routes = [
     FontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatListModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    ReactiveFormsModule,
+    AngularFirestoreModule,
+    BrowserAnimationsModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

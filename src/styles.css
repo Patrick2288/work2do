@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+body{
+    background-image: url(../src/app/images/blue.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1%;
+    background-attachment: fixed;
+}
+@font-face {
+    font-family: 'School Book New Font';
+    src: url(/src/assets/School\ Book\ New.ttf) format("opentype");
+  }
+  @font-face{
+    font-family: graffiti;
+    src: url(/src/assets/MASTERPLAN___.ttf);
+}

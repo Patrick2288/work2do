@@ -1,0 +1,37 @@
+mat-card{
+    background-image: url(../images/paper.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 100px;
+    padding-top: 65px;
+    font-family: graffiti;
+  }
+  
+  input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;    
+    box-sizing: border-box;
+  }
+  input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;    
+    box-sizing: border-box;
+  }
+  input[type=username], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;    
+    box-sizing: border-box;
+  }
+  button{
+    margin: auto;
+    width: 100%;
+    border: 2px solid white;
+    font-family: graffiti;
+    font-size: 24px;
+}

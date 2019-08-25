@@ -1,1 +1,28 @@
-<p>login works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<mat-card class="background">
+    <mat-card class="form">
+    <mat-card-content class="myform">
+      <form class="my-form" [formGroup]="form" (ngSubmit)="login()">
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" type="email" name="email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary">Login</button>
+    </mat-card-actions>
+    <mat-card-actions>
+      <h3>Sign In With:</h3>
+      <a (click)="facebookLogin()" color="primary">
+        <i class="fa fa-facebook" aria-hidden="true"></i>
+      </a>
+      <a class="fa fa-twitter"></a>
+      <a class="fa fa-google"></a>
+      </mat-card-actions>
+  </mat-card>
+  </mat-card>
