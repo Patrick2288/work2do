@@ -21,10 +21,15 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { SignupComponent } from './signup/signup.component';
 import { AddAssignmentComponent } from './add-assignment/add-assignment.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NavbarModule, WavesModule, ButtonsModule, DropdownModule } from 'angular-bootstrap-md';
+
 import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 
-import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule, MatListModule, MatProgressSpinnerModule, MatMenuModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule, MatListModule, MatProgressSpinnerModule, MatMenuModule, MatSidenavModule} from '@angular/material';
+import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 
 library.add(faStar);
 
@@ -47,6 +52,7 @@ const routes: Routes = [
     NotificationsComponent,
     SignupComponent,
     AddAssignmentComponent,
+    SidenavListComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,14 @@ const routes: Routes = [
     ReactiveFormsModule,
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FlexLayoutModule,
+    MDBBootstrapModule,
+    NavbarModule,
+    WavesModule,
+    ButtonsModule,
+    DropdownModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

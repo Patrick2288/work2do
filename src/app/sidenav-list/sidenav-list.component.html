@@ -1,0 +1,7 @@
+  <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()"  routerLink="/home" (click)="onSidenavClose()">Home</button>
+  <button mat-button routerLinkActive="active" *ngIf="userLoggedIn()" routerLink="add-assignment" (click)="onSidenavClose()">Add Assignment</button>
+
+  <span style="flex:1 1 auto"></span>
+  <button mat-button routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="/login" (click)="onSidenavClose()">Login</button>
+  <button mat-button routerLinkActive="active" *ngIf="isLoggedIn" (click)=onLogout() (click)="onSidenavClose()">Logout</button>
+  <button mat-button routerLinkActive="active" *ngIf="!isLoggedIn" routerLink="/signup" (click)="onSidenavClose()">Register</button> 

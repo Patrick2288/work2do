@@ -3,13 +3,13 @@ import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: 'app-sidenav-list',
+  templateUrl: './sidenav-list.component.html',
+  styleUrls: ['./sidenav-list.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class SidenavListComponent implements OnInit {
 
-  @Output() public sidenavToggle = new EventEmitter();
+  @Output() sidenavClose = new EventEmitter();
 
   title: string ="Work 2 Do";
 
@@ -30,7 +30,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.isLoggedIn = this.auth.isLoggedIn();
   }
-  public onToggleSidenav = () => {
-    this.sidenavToggle.emit();
+  // public onToggleSidenav = () => {
+  //   this.sidenavToggle.emit();
+  // }
+  public onSidenavClose = () => {
+    this.sidenavClose.emit();
   }
 }
